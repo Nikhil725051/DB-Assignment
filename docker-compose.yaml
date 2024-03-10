@@ -1,0 +1,20 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:14.1
+    environment:
+      POSTGRES_USER: assignment
+      POSTGRES_PASSWORD: assignment
+      POSTGRES_DB: assignmentDB
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - app-network
+
+volumes:
+  postgres-data:
+
+networks:
+  app-network:
